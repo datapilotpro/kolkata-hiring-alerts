@@ -13,7 +13,7 @@ Next step: LinkedIn Hiring Search 🚀
 
 url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
-requests.post(
+response = requests.post(
     url,
     data={
         "chat_id": CHAT_ID,
@@ -21,4 +21,6 @@ requests.post(
     }
 )
 
+print("Status Code:", response.status_code)
+print("Response:", response.text)
 print("Message sent successfully.")
