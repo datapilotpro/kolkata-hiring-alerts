@@ -2,6 +2,8 @@ from config import DESIGNATIONS, LOCATIONS
 from search import search_jobs
 from telegram_sender import send_message
 
+send_message("🚀 NEW VERSION RUNNING")
+
 for designation in DESIGNATIONS[:1]:
     for location in LOCATIONS[:1]:
 
