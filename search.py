@@ -10,7 +10,7 @@ HEADERS = {
 
 
 def search_jobs(query):
-    url = "https://html.duckduckgo.com/html/"
+    url = "https://duckduckgo.com/html/"
 
     response = requests.post(
         url,
