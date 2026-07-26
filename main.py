@@ -1,3 +1,4 @@
+raise Exception("THIS IS THE NEW MAIN.PY")
 from config import DESIGNATIONS, LOCATIONS
 from search import search_jobs
 from telegram_sender import send_message
