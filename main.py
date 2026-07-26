@@ -1,4 +1,4 @@
-raise Exception("THIS IS THE NEW MAIN.PY")
+raise Exception("NEW MAIN IS RUNNING")
 from config import DESIGNATIONS, LOCATIONS
 from search import search_jobs
 from telegram_sender import send_message
