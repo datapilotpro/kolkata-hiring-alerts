@@ -1,26 +1,17 @@
-import os
-import requests
+from config import DESIGNATIONS, LOCATIONS
+from search import search_jobs
 
-BOT_TOKEN = os.environ["BOT_TOKEN"]
-CHAT_ID = os.environ["CHAT_ID"]
+for designation in DESIGNATIONS:
+    for location in LOCATIONS:
 
-message = """✅ Kolkata Hiring Alerts Started Successfully!
+        query = f'site:linkedin.com "{designation}" "{location}" hiring'
 
-GitHub Actions is working correctly.
+        print("=" * 80)
+        print(query)
 
-Next step: LinkedIn Hiring Search 🚀
-"""
+        results = search_jobs(query)
 
-url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+        print(f"Found {len(results)} results")
 
-response = requests.post(
-    url,
-    data={
-        "chat_id": CHAT_ID,
-        "text": message
-    }
-)
-
-print("Status Code:", response.status_code)
-print("Response:", response.text)
-print("Message sent successfully.")
+        for link in results[:5]:
+            print(link)
